@@ -53,12 +53,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         postRequest.buildRequest(userpass, completion: {result in
             switch result {
             case .success(_):
-                print("The credentials were correct and access has been granted")
+                print("Everything went smooth")
             case .failure(_):
-                print("Incorrect credentials access denied")
+                print("There was an error getting the results")
             }
         })
-        print(postRequest)
     }
     
 }

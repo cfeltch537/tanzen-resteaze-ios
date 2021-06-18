@@ -17,7 +17,7 @@ struct APIRequest {
 let session = URLSession(configuration: .default)
 let url = URL(string: "https://dev.tanzenmed.com/api/auth")!
 
-func buildRequest(_ userpass: UserPass, completion: @escaping(Result<UserPass, APIError>) -> Void){
+func buildRequest(_ userpass: UserPass, completion: @escaping(Result<ResponseBody, APIError>) -> Void){
     do {
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
@@ -31,9 +31,12 @@ func buildRequest(_ userpass: UserPass, completion: @escaping(Result<UserPass, A
             print("response problem")
             return
             }
+            print("this is the httpresponse: ", httpresponse)
+            print("this is the json data: ", jsonData)
         do {
-            let userData = try JSONDecoder().decode(UserPass.self, from: jsonData)
+            let userData = try JSONDecoder().decode(ResponseBody.self, from: jsonData)
             completion(.success(userData))
+            print("this is the userData: ", userData)
         } catch{
             completion(.failure(.decodingProblem))
             print("decoding problem")

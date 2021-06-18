@@ -18,3 +18,10 @@ struct UserPass: Codable{
     
 }
 
+struct ResponseBody: Codable {
+    var message: String
+    var name: String
+    var email: String
+    var userId: String
+}
+
