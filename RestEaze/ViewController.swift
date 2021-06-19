@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //Resigns the keyboard
         view.endEditing(true)
         
-        let userpass = UserPass(username: UsernameFinal, password: PasswordFinal)
+        let userpass = UserPass(email: UsernameFinal, password: PasswordFinal)
         
         let postRequest = APIRequest()
         

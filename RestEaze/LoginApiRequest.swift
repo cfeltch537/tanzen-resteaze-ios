@@ -23,7 +23,7 @@ func buildRequest(_ userpass: UserPass, completion: @escaping(Result<ResponseBod
     request.httpMethod = "POST"
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.httpBody = try JSONEncoder().encode(userpass)
-    
+    print(String(data: request.httpBody!, encoding: .utf8)!)
     
         let dataTask = URLSession.shared.dataTask(with: request){data, response, _ in
         guard let httpresponse = response as? HTTPURLResponse, let
@@ -32,8 +32,7 @@ func buildRequest(_ userpass: UserPass, completion: @escaping(Result<ResponseBod
             print("response problem")
             return
             }
-            print("this is the httpresponse: ", httpresponse)
-            print("this is the json data: ", jsonData)
+            print("this is the json data: ", String(data: jsonData, encoding: .utf8)!)
         do {
             let userData = try JSONDecoder().decode(ResponseBody.self, from: jsonData)
             completion(.success(userData))
