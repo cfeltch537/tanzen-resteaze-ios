@@ -24,6 +24,7 @@ func buildRequest(_ userpass: UserPass, completion: @escaping(Result<ResponseBod
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     request.httpBody = try JSONEncoder().encode(userpass)
     
+    
         let dataTask = URLSession.shared.dataTask(with: request){data, response, _ in
         guard let httpresponse = response as? HTTPURLResponse, let
                 jsonData = data else{
@@ -37,10 +38,18 @@ func buildRequest(_ userpass: UserPass, completion: @escaping(Result<ResponseBod
             let userData = try JSONDecoder().decode(ResponseBody.self, from: jsonData)
             completion(.success(userData))
             print("this is the userData: ", userData)
-        } catch{
-            completion(.failure(.decodingProblem))
-            print("decoding problem")
-            }
+            
+        } catch DecodingError.keyNotFound(let key, let context) {
+            Swift.print("could not find key \(key) in JSON: \(context.debugDescription)")
+        } catch DecodingError.valueNotFound(let type, let context) {
+            Swift.print("could not find type \(type) in JSON: \(context.debugDescription)")
+        } catch DecodingError.typeMismatch(let type, let context) {
+            Swift.print("type mismatch for type \(type) in JSON: \(context.debugDescription)")
+        } catch DecodingError.dataCorrupted(let context) {
+            Swift.print("data found to be corrupted in JSON: \(context.debugDescription)")
+        } catch let error as NSError {
+            NSLog("Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)")
+        }
         }
         dataTask.resume()
     }catch{

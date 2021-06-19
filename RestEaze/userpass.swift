@@ -18,7 +18,7 @@ struct UserPass: Codable{
     
 }
 
-struct ResponseBody: Codable {
+struct ResponseBody: Decodable {
     var message: String
     var name: String
     var email: String
