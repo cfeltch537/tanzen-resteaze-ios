@@ -228,6 +228,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="kFn-oI-AtH"/>
         <segue reference="6Nx-qb-D6b"/>
     </inferredMetricsTieBreakers>
     <resources>

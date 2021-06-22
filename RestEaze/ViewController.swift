@@ -46,11 +46,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         //Resigns the keyboard
         view.endEditing(true)
         
-        let userpass = UserPass(email: UsernameFinal, password: PasswordFinal)
         
         let postRequest = APIRequest()
         
-        postRequest.buildRequest(userpass, completion: {result in
+        postRequest.buildRequest(UsernameFinal, password: PasswordFinal, completion: {result in
             switch result {
             case .success(_):
                 print("Everything went smooth")
