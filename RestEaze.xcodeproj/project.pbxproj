@@ -14,8 +14,8 @@
 		DF6B26262617ABCE0063FBCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF6B26252617ABCE0063FBCF /* Assets.xcassets */; };
 		DF6B26292617ABCE0063FBCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF6B26272617ABCE0063FBCF /* LaunchScreen.storyboard */; };
 		DF6B26332617AF800063FBCF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B26322617AF800063FBCF /* SignupViewController.swift */; };
-		DFEFD7D6265D7860003BF715 /* userpass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEFD7D5265D7860003BF715 /* userpass.swift */; };
-		DFEFD7D82660411F003BF715 /* LoginApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEFD7D72660411F003BF715 /* LoginApiRequest.swift */; };
+		DF7638C32685075E001EA399 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7638C22685075E001EA399 /* HomeViewController.swift */; };
+		DF7638C526853291001EA399 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7638C426853290001EA399 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +28,8 @@
 		DF6B26282617ABCE0063FBCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF6B262A2617ABCE0063FBCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF6B26322617AF800063FBCF /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
-		DFEFD7D5265D7860003BF715 /* userpass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userpass.swift; sourceTree = "<group>"; };
-		DFEFD7D72660411F003BF715 /* LoginApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApiRequest.swift; sourceTree = "<group>"; };
+		DF7638C22685075E001EA399 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		DF7638C426853290001EA399 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,13 +65,13 @@
 				DF6B261C2617ABBD0063FBCF /* AppDelegate.swift */,
 				DF6B261E2617ABBD0063FBCF /* SceneDelegate.swift */,
 				DF6B26202617ABBD0063FBCF /* ViewController.swift */,
+				DF7638C426853290001EA399 /* Constants.swift */,
 				DF6B26322617AF800063FBCF /* SignupViewController.swift */,
+				DF7638C22685075E001EA399 /* HomeViewController.swift */,
 				DF6B26222617ABBD0063FBCF /* Main.storyboard */,
 				DF6B26252617ABCE0063FBCF /* Assets.xcassets */,
 				DF6B26272617ABCE0063FBCF /* LaunchScreen.storyboard */,
 				DF6B262A2617ABCE0063FBCF /* Info.plist */,
-				DFEFD7D5265D7860003BF715 /* userpass.swift */,
-				DFEFD7D72660411F003BF715 /* LoginApiRequest.swift */,
 			);
 			path = RestEaze;
 			sourceTree = "<group>";
@@ -150,8 +150,8 @@
 				DF6B261D2617ABBD0063FBCF /* AppDelegate.swift in Sources */,
 				DF6B26332617AF800063FBCF /* SignupViewController.swift in Sources */,
 				DF6B261F2617ABBD0063FBCF /* SceneDelegate.swift in Sources */,
-				DFEFD7D82660411F003BF715 /* LoginApiRequest.swift in Sources */,
-				DFEFD7D6265D7860003BF715 /* userpass.swift in Sources */,
+				DF7638C32685075E001EA399 /* HomeViewController.swift in Sources */,
+				DF7638C526853291001EA399 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
