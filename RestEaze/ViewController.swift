@@ -74,22 +74,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 request.addValue("application/json", forHTTPHeaderField: "Accept")
                 request.addValue("application/json",forHTTPHeaderField: "Content-Type")
                 let json: [String: Any] = ["email": UsernameFinal, "password": PasswordFinal]
-                let jsonData = try? JSONSerialization.data(withJSONObject: json)
-                request.httpBody = jsonData
+                let loginData = try? JSONSerialization.data(withJSONObject: json)
+                request.httpBody = loginData
             print(String(data: request.httpBody!, encoding: .utf8)!)
             
                 let dataTask = URLSession.shared.dataTask(with: request){data, response, _ in
                 guard let jsonData = data else{
-
                     return
                     }
                 do {
-                    let userData = try JSONDecoder().decode(ResponseBody.self, from: jsonData)
+                    let apiResponse = try JSONDecoder().decode(ResponseBody.self, from: jsonData)
     //                completion(.success(userData))
                     
                     // Saves the user id and message
-                    self.UserID = userData._id
-                    self.ResponseMessage = userData.message
+                    self.UserID = apiResponse._id
+                    self.ResponseMessage = apiResponse.message
                     print(self.ResponseMessage!, " was stored and so was ", self.UserID!)
                     
                     if self.ResponseMessage == Constants.Strings.successMessage{

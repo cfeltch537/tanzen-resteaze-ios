@@ -211,6 +211,13 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfE-oS-YS6">
+                                <rect key="frame" x="40" y="533" width="334" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3o9-hQ-8zZ"/>
                         <color key="backgroundColor" red="0.16326219894608884" green="0.1563692035665859" blue="0.16332331391953936" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -226,6 +233,7 @@
                         <outlet property="Name" destination="gcJ-fZ-VwH" id="edX-Vh-UEE"/>
                         <outlet property="NewUserPassword" destination="Jqb-Am-sus" id="nwe-CS-08U"/>
                         <outlet property="NewUserPasswordConfirm" destination="qjY-nC-iNY" id="RQq-bR-e3J"/>
+                        <outlet property="errorLabel" destination="EfE-oS-YS6" id="GRQ-aG-rxW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etT-Tr-aux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
