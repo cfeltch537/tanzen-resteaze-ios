@@ -18,11 +18,15 @@ struct Constants {
         static let passwordEmpty = "password cannot be empty"
         static let nameLength = "Name must be at least 5 characters long"
         static let emailEmpty = "Email cannot be empty"
+        static let alreadyExists = "Account already exists for that email."
     }
     struct Errors {
         static let nameError = "\"name\" is not allowed to be empty"
         static let passwordError = "\"password\" is not allowed to be empty"
         static let emailError = "\"email\" is not allowed to be empty"
         static let nameShort = "\"name\" length must be at least 5 characters long"
+    }
+    struct cookie {
+        static var cookies = [HTTPCookie()]
     }
 }

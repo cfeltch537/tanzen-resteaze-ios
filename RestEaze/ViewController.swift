@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import WebKit
+var WebConfig = WKWebViewConfiguration.init()
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -21,6 +23,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // Creates delegate objects out of the text fields
+        
         Username.delegate = self
         Password.delegate = self
     }
@@ -48,6 +51,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func LoginTapped(_ sender: Any) {
         let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
         
+//        func storeCookies(_ cookies: [HTTPCookie], forURL url: URL) {
+//            let cookieStorage = HTTPCookieStorage.shared
+//            cookieStorage.setCookies(cookies,
+//                                     for: url,
+//                                     mainDocumentURL: nil)
+//        }
+        
+        func deleteCookies(forURL url: URL) {
+            let cookieStorage = HTTPCookieStorage.shared
+
+            for cookie in readCookie(forURL: url) {
+                cookieStorage.deleteCookie(cookie)
+            }
+        }
+        
+        func readCookie(forURL url: URL) -> [HTTPCookie] {
+            let cookieStorage = HTTPCookieStorage.shared
+            let cookies = cookieStorage.cookies(for: url) ?? []
+            return cookies
+        }
+        
         enum APIError:Error {
             case responseProblem
             case decodingProblem
@@ -69,6 +93,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //Resigns the keyboard
             view.endEditing(true)
             do {
+            var cookies = readCookie(forURL: url)
+            print("Cookies before request: ", cookies)
             var request = URLRequest(url: url)
             request.httpMethod = "POST"
                 request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -82,6 +108,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 guard let jsonData = data else{
                     return
                     }
+                let response = response as? HTTPURLResponse
                 do {
                     let apiResponse = try JSONDecoder().decode(ResponseBody.self, from: jsonData)
     //                completion(.success(userData))
@@ -89,12 +116,23 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     // Saves the user id and message
                     self.UserID = apiResponse._id
                     self.ResponseMessage = apiResponse.message
-                    print(self.ResponseMessage!, " was stored and so was ", self.UserID!)
+                    print(self.ResponseMessage!, "was stored and so was", self.UserID!)
+                    
+                    cookies = readCookie(forURL: url)
+                    Constants.cookie.cookies = HTTPCookie.cookies(withResponseHeaderFields: response!.allHeaderFields as! [String: String], for: url)
+                    print("Cookies after request: ", cookies)
+
+                    
+//                            storeCookies(Constants.cookie.cookies, forURL: url)
+                    
+                            print("Cookies after storing: ", cookies)
                     
                     if self.ResponseMessage == Constants.Strings.successMessage{
+                        print("login was successful")
                         DispatchQueue.main.async {
                             self.navigationController?.pushViewController(homeViewController!, animated: true)
                         }
+                    
                     }
                 // Catching Errors
                 }catch DecodingError.keyNotFound(let key, let context) {
