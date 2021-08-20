@@ -16,6 +16,10 @@
 		DF6B26332617AF800063FBCF /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B26322617AF800063FBCF /* SignupViewController.swift */; };
 		DF7638C32685075E001EA399 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7638C22685075E001EA399 /* HomeViewController.swift */; };
 		DF7638C526853291001EA399 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7638C426853290001EA399 /* Constants.swift */; };
+		DF7638CB268F8DA5001EA399 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7638CA268F8DA5001EA399 /* WebViewController.swift */; };
+		DF7638CD26A748EC001EA399 /* BLEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7638CC26A748EC001EA399 /* BLEViewController.swift */; };
+		DFC2E15926B4590D00B24CC8 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC2E15826B4590D00B24CC8 /* Database.swift */; };
+		DFCDA99526D052E8009A7E88 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCDA99426D052E8009A7E88 /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		DF6B26322617AF800063FBCF /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		DF7638C22685075E001EA399 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DF7638C426853290001EA399 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DF7638CA268F8DA5001EA399 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		DF7638CC26A748EC001EA399 /* BLEViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEViewController.swift; sourceTree = "<group>"; };
+		DFC2E15826B4590D00B24CC8 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		DFCDA99426D052E8009A7E88 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,10 @@
 				DF7638C426853290001EA399 /* Constants.swift */,
 				DF6B26322617AF800063FBCF /* SignupViewController.swift */,
 				DF7638C22685075E001EA399 /* HomeViewController.swift */,
+				DFCDA99426D052E8009A7E88 /* NotificationViewController.swift */,
+				DF7638CA268F8DA5001EA399 /* WebViewController.swift */,
+				DF7638CC26A748EC001EA399 /* BLEViewController.swift */,
+				DFC2E15826B4590D00B24CC8 /* Database.swift */,
 				DF6B26222617ABBD0063FBCF /* Main.storyboard */,
 				DF6B26252617ABCE0063FBCF /* Assets.xcassets */,
 				DF6B26272617ABCE0063FBCF /* LaunchScreen.storyboard */,
@@ -146,10 +158,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFCDA99526D052E8009A7E88 /* NotificationViewController.swift in Sources */,
 				DF6B26212617ABBD0063FBCF /* ViewController.swift in Sources */,
 				DF6B261D2617ABBD0063FBCF /* AppDelegate.swift in Sources */,
 				DF6B26332617AF800063FBCF /* SignupViewController.swift in Sources */,
 				DF6B261F2617ABBD0063FBCF /* SceneDelegate.swift in Sources */,
+				DF7638CD26A748EC001EA399 /* BLEViewController.swift in Sources */,
+				DF7638CB268F8DA5001EA399 /* WebViewController.swift in Sources */,
+				DFC2E15926B4590D00B24CC8 /* Database.swift in Sources */,
 				DF7638C32685075E001EA399 /* HomeViewController.swift in Sources */,
 				DF7638C526853291001EA399 /* Constants.swift in Sources */,
 			);
