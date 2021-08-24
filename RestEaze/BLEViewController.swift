@@ -34,7 +34,7 @@ class BLEViewController: UIViewController, CBCentralManagerDelegate, CBPeriphera
         if central.state == CBManagerState.poweredOn {
             print("BLE powered on")
             // when we scan for services
-            //central.scanForPeripherals(withServices: [timeService], options: nil)
+            central.scanForPeripherals(withServices: nil, options: nil)
         }
         else{
             print("Something is wrong with BLE")
@@ -46,7 +46,7 @@ class BLEViewController: UIViewController, CBCentralManagerDelegate, CBPeriphera
         // Checks name of the device found by the central manager
         if let pname = peripheral.name{
             print(pname)
-        if pname == "RestEaze"{
+        if pname == "Apple TV"{
             self.centralManager.stopScan()
 
             self.RestEaze = peripheral
